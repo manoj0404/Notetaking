@@ -1,0 +1,26 @@
+
+<%- include("partials/header"); -%>
+    
+    <div class="note-outside">
+
+        <%  posts.forEach(function(post){ %>
+            <div class="note">
+                <div class="date">
+                    <%=new Date().toDateString();%>
+                </div>
+                    
+                <div class="note-title"><%=post.title%>
+                    <a href="/delete/<%=post._id%>"><i class="fas fa-trash"></i></a></div>
+                <div class="note-content">
+                    <p>
+                        <%=post.content.substring(0, 100) + " ..."%>
+                        <a href="/posts/<%=post._id%>">Read More</a>
+                    </p>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+    
+
+
+<%- include("partials/footer"); -%>
